@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+  <title> 著者一覧</title>
+{% endblock %}
+
+{% block content %}
+  <h2>著者 List</h2>
+  {% if author_list %}
+  <ul>
+    {% for author in author_list %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author.first_name}},{{author.last_name}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no authors in the library.</p>
+  {% endif %}
+{% endblock %}

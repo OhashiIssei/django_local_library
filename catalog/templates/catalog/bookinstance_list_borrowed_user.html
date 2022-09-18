@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+  <title> 借りている本</title>
+{% endblock %}
+
+{% block content %}
+    <h2>借りている本</h2>
+
+    {% if bookinstance_list %}
+    <ul>
+
+      {% for bookinst in bookinstance_list %}
+      <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a> ({{ bookinst.due_back }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>現在借りている本はありません。</p>
+    {% endif %}
+{% endblock %}

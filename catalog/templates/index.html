@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+  <title> ランドリー図書館にようこそ</title>
+{% endblock %}
+
+{% block content %}
+  <h2>ランドリー図書館にようこそ</h2>
+  <p>ようこそ、ランドリー図書館へ。このウェブサイトは<em>大橋いっせい</em>によって開発されています!</p>
+  <h3>現在の状況</h3>
+  <p>この図書館は次のような記録を持っています：</p>
+  <ul>
+    <li><strong>書籍:</strong> {{ num_books }}</li>
+    <li><strong>冊数:</strong> {{ num_instances }}</li>
+    <li><strong>貸出可能冊数:</strong> {{ num_instances_available }}</li>
+    <li><strong>著者:</strong> {{ num_authors }}</li>
+  </ul>
+
+  <p>
+    あなたがこのページを訪れたのは、{{ num_visits }}回目です
+  </p>
+{% endblock %}
